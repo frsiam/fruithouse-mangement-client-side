@@ -1,96 +1,96 @@
 [
     {
         "_id": "626f9b2cfea8343bc14f7409",
-        "name": "Brennan Prince",
-        "img": "http://placehold.it/32x32",
+        "name": "Watermelon",
+        "img": "https://i.ibb.co/Y7kL9sk/watermelon.jpg",
         "price": "$21",
         "quantity": 3,
         "email": "siam.frs@gmail.com",
         "phone": 3499440,
         "supplierName": "VIAGRAND",
-        "description": "Dolor quis nulla non eiusmod. Minim aute irure do incididunt. Pariatur non laboris culpa qui anim nostrud ut ea nisi adipisicing. Est adipisicing incididunt commodo mollit ullamco tempor laboris ad veniam amet proident.\r\n"
+        "description": "Watermelon is a watery fruit that grows in the vine-like shrub flowering plant that comes from the family Cucurbitaceae and contains water. The color of the outer shell is green and thick, and the inner fleshy part is red."
     },
     {
         "_id": "626f9b2c158b622266380649",
-        "name": "Rhonda Berg",
-        "img": "http://placehold.it/32x32",
+        "name": "Apple",
+        "img": "https://i.ibb.co/8Xm6z3m/apple.jpg",
         "price": "$26",
         "quantity": 5,
         "email": "siam.frs@gmail.com",
         "phone": 3335569,
         "supplierName": "TALKALOT",
-        "description": "Eiusmod mollit Lorem nisi deserunt consequat veniam cupidatat ea voluptate veniam laboris et. Anim aliquip cupidatat dolor nulla id. Exercitation ullamco incididunt eiusmod nisi nulla tempor consequat fugiat. Anim pariatur proident non reprehenderit adipisicing id consectetur tempor minim fugiat proident consequat elit.\r\n"
+        "description": "An apple is an edible fruit that is cultivated worldwide from the species Malus. This fruit contains vital minerals, vitamins, and other nutrients, which are beneficial for our body. Its color is red, pink, green, and has a sweet taste."
     },
     {
         "_id": "626f9b2c3fa1e3e4e6a09e77",
-        "name": "Wiggins Bryan",
-        "img": "http://placehold.it/32x32",
+        "name": "Banana",
+        "img": "https://i.ibb.co/64QdSHG/banana.jpg",
         "price": "$26",
         "quantity": 5,
         "email": "siam.frs@gmail.com",
         "phone": 3341227,
         "supplierName": "OLUCORE",
-        "description": "Do culpa aliqua do aliquip. In laborum magna elit culpa laborum anim amet. Et cupidatat dolore laborum do occaecat.\r\n"
+        "description": "A banana is a fleshy and edible fruit that does not contain any seeds. Its family is Musa named scientifically, Musa acuminate, variable in size, color, and elongated, curve-shaped. It is all fleshy and sweet, full of starch, and is green, yellow, red, purple, or brown when ripened. This is also used as a vegetable when it is raw, called plantains."
     },
     {
         "_id": "626f9b2cc088483a24033155",
-        "name": "Stanley Harrison",
-        "img": "http://placehold.it/32x32",
+        "name": "Cherry",
+        "img": "https://i.ibb.co/FHdMVcx/cherry.jpg",
         "price": "$35",
         "quantity": 7,
         "email": "siam.frs@gmail.com",
         "phone": 3147774,
         "supplierName": "XPLOR",
-        "description": "Aliquip aliquip veniam ea exercitation nulla qui tempor sint eu officia ut consectetur voluptate. Nostrud anim nostrud velit dolore ipsum dolore consectetur esse. Officia enim nulla veniam aute duis proident aliqua.\r\n"
+        "description": "Cherry is a fruit of genus prunus, is a fleshy drupe. The sweet cherry is scientifically named Prunus avium, and the sour cherry is named Prunus cerasus. It is red, green, orange in colors, and produced in the flowering plants. It is also called cherry blossom and ornamental cherry."
     },
     {
         "_id": "626f9b2cfb282b799c5afcda",
-        "name": "Courtney Duran",
-        "img": "http://placehold.it/32x32",
+        "name": "Grapes",
+        "img": "https://i.ibb.co/MNbR6K8/grapes.jpg",
         "price": "$27",
         "quantity": 2,
         "email": "siam.frs@gmail.com",
         "phone": 3373341,
         "supplierName": "QNEKT",
-        "description": "Duis pariatur eiusmod duis nostrud duis fugiat pariatur aliquip reprehenderit consectetur consectetur est. Proident exercitation excepteur in veniam. Ad proident Lorem anim eu commodo. Aliqua aliqua veniam in exercitation elit magna commodo veniam laboris ipsum minim laboris irure qui. Amet duis laborum occaecat duis laboris aliquip cillum deserunt labore eiusmod ullamco. Aute pariatur consequat Lorem enim amet do id id dolor tempor incididunt.\r\n"
-    },
-    {
-        "_id": "626f9b2c1bf57cdeaab17f13",
-        "name": "Fitzpatrick Burris",
-        "img": "http://placehold.it/32x32",
-        "price": "$26",
-        "quantity": 4,
-        "email": "siam.frs@gmail.com",
-        "phone": 3245185,
-        "supplierName": "QUILCH",
-        "description": "Enim consectetur exercitation fugiat dolore. Officia labore qui duis ea magna est est ea qui minim irure. Consectetur nulla pariatur quis excepteur sit sit reprehenderit cupidatat reprehenderit laborum nisi. Aliqua deserunt minim eiusmod ipsum velit in Lorem duis laboris ipsum do nulla culpa amet. Eu velit nulla do ullamco id Lorem irure mollit mollit laboris nisi occaecat aute aliquip.\r\n"
+        "description": "Grape is a berry-type fruit that is used to make wines and is grown on the flowering plant from the Vitis family. It is green in color and a non-climatic type of fruit. Its seeds are used to extract raisins, vinegar, and grape seed oil."
     },
     {
         "_id": "626f9b2cda314e8bf1d6b27f",
-        "name": "Petty Mendoza",
-        "img": "http://placehold.it/32x32",
+        "name": "Mango",
+        "img": "https://i.ibb.co/31K4XNT/mango.jpg",
         "price": "$27",
         "quantity": 4,
         "email": "siam.frs@gmail.com",
         "phone": 3342275,
         "supplierName": "CONFERIA",
-        "description": "Eiusmod in sunt adipisicing amet ad consectetur Lorem. Minim fugiat ea consectetur minim Lorem elit dolore fugiat. Occaecat eu consequat do non commodo.\r\n"
+        "description": "The mango is an edible fruit rich in vitamins(A, C &D), and the taste is either sweet when ripe and sour when before ripen. This fruit is also called the king of all fruits, scientifically called Mangifera indica, mostly cultivated in tropical areas."
+    },
+    {
+        "_id": "626f9b2c1bf57cdeaab17f13",
+        "name": "Guava",
+        "img": "https://i.ibb.co/0Zzw67q/guava.jpg",
+        "price": "$26",
+        "quantity": 4,
+        "email": "siam.frs@gmail.com",
+        "phone": 3245185,
+        "supplierName": "QUILCH",
+        "description": "Guava is a fleshy fruit containing seeds inside it, which have vitamin-C rich and a lot of antioxidants, potassium, and fiber. It can be considered as beneficial fruit eaten regularly helps in blood sugar levels and some other purposes. The scientific name for this is Psidium guajava."
     },
     {
         "_id": "626f9b2c3e3f4cfe97a413f6",
-        "name": "Ebony Robbins",
-        "img": "http://placehold.it/32x32",
+        "name": "Lemon",
+        "img": "https://i.ibb.co/QDBqFZC/lemon.jpg",
         "price": "$38",
         "quantity": 2,
         "email": "siam.frs@gmail.com",
         "phone": 3309014,
         "supplierName": "ZANYMAX",
-        "description": "Sunt id ex sit adipisicing sint ea in commodo ex ad est. Enim veniam sunt anim qui excepteur ut cillum cupidatat tempor deserunt et in laborum officia. Labore ea officia proident sint consectetur incididunt anim quis culpa. Deserunt ad velit culpa velit ullamco tempor commodo aute sit pariatur in. Officia anim adipisicing quis exercitation duis aute ex elit aliquip. Tempor veniam incididunt fugiat ut. Deserunt duis labore ea est enim sint reprehenderit.\r\n"
+        "description": "Lemon is a fruit, also known as lime, a citrus fruit that contains citric acid in it. This is the same as that of the orange, grapefruit, etc. It is round, green, contains acidic juice vesicles."
     },
     {
         "_id": "626f9b2caf8cb6c8ae468618",
-        "name": "Louise Rosa",
-        "img": "http://placehold.it/32x32",
+        "name": "Orange",
+        "img": "https://i.ibb.co/VBBd475/orange.jpg",
         "price": "$39",
         "quantity": 5,
         "email": "siam.frs@gmail.com",

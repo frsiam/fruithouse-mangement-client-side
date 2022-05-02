@@ -1,5 +1,4 @@
 import React from 'react';
-import useInventories from '../../hooks/useInventories';
 import Banner from '../Banner/Banner';
 import HeroArea from '../HeroArea/HeroArea';
 import HomeInventories from '../HomeInventories/HomeInventories';
