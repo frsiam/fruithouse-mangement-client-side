@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useInventories from '../../hooks/useInventories';
 import Singleinventory from '../Singleinventory/Singleinventory';
 
 const HomeInventories = () => {
     const [inventories] = useInventories();
+    const navigate = useNavigate();
     // console.log(inventories)
     // if (inventories) {
     //     inventories.length = 6;
@@ -17,7 +19,7 @@ const HomeInventories = () => {
                 }
             </div>
             <div className='text-center'>
-                <button className="btn btn-dark rounded-0">Manage Inventories</button>
+                <button onClick={() => navigate('/manageinventory')} className="btn btn-dark rounded-0">Manage Inventories</button>
             </div>
         </>
     );

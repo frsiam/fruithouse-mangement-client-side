@@ -7,7 +7,7 @@ const useInventories = (url = 'http://localhost:3000/data.json') => {
         fetch(url)
             .then(res => res.json())
             .then(data => setInventories(data))
-    }, [])
+    }, [url])
 
     return [inventories, setInventories];
 };
