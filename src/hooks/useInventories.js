@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
-const useInventories = () => {
+const useInventories = (url = 'http://localhost:3000/data.json') => {
     const [inventories, setInventories] = useState([]);
 
     useEffect(() => {
-        fetch('data.json')
+        fetch(url)
             .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                setInventories(data)
-            })
+            .then(data => setInventories(data))
     }, [])
-    return [inventories];
+
+    return [inventories, setInventories];
 };
 
 export default useInventories;

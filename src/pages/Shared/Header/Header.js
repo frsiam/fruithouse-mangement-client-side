@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
             <div className="container-fluid py-2 mx-md-3">
-                <Link className="navbar-brand" to="/"><span className='fs-4 fw-bolder text-uppercase'><span className='border-y-2 text-green-400'>Fruits</span> <span className='text-orange-400 border-y-2 border-info'>house</span></span></Link>
+                <Link className="navbar-brand" to="/"><span className='fs-4 fw-bolder text-uppercase'><span className='border-y-2 text-green-400'>Fruit</span> <span className='text-orange-400 border-y-2 border-info'>house</span></span></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
