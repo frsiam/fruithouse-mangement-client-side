@@ -28,7 +28,7 @@ const Inventory = () => {
             </div>
             <div className="my-3 d-flex justify-evenly">
                 <UpdateModal />
-                <button className="btn btn-warning rounded-0">
+                <button className="btn btn-success rounded-0 font-semibold">
                     Delivered
                 </button>
             </div>
