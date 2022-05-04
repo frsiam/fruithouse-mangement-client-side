@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import login from '../../images/login.png';
 import loginbg from '../../images/loginbg.png';
 
@@ -8,12 +10,22 @@ const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
 
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
     const handleSubmit = e => {
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        console.log(email);
-        console.log(password);
+
+        signInWithEmailAndPassword(email, password);
+    }
+    if (user) {
+        navigate('/blogs')
     }
     return (
         <div className='min-h-screen' style={{ backgroundImage: `url(${loginbg})` }}>

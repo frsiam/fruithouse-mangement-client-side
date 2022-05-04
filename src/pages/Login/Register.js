@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import bgImage from '../../images/wickedbackground.png';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const Register = () => {
     const navigate = useNavigate();
     const [terms, setTerms] = useState(false);
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
     const handleRegister = e => {
         e.preventDefault();
@@ -12,8 +21,13 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const confirmpassword = e.target.confirmpassword.value;
-        console.log(name)
+        createUserWithEmailAndPassword(email, password);
     }
+
+    if (user) {
+        navigate('/home');
+    }
+
     return (
         <div className='bg-image min-h-screen' style={{ backgroundImage: `url(${bgImage})` }}>
             <div className='container mx-auto w-3/4 md:w-1/2 lg:w-2/6 py-5 px-4 bg-emerald-200'>
