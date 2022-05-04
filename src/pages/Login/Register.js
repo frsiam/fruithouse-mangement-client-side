@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import bgImage from '../../images/wickedbackground.png';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import SocialLogin from './SocialLogin';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -21,6 +22,11 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const confirmpassword = e.target.confirmpassword.value;
+        if (password !== confirmpassword) {
+            alert('Password can not matched !');
+            // toast('Password can not matched !');
+            return;
+        }
         createUserWithEmailAndPassword(email, password);
     }
 
@@ -52,6 +58,7 @@ const Register = () => {
                     <button disabled={!terms} className="btn bg-pink-600 font-semibold text-xl text-stone-50 rounded-0 w-full">Register</button>
                 </form>
                 <p>Already Member ? <span onClick={() => navigate('/login')} className='text-primary cursor-pointer font-semibold'>Please Login</span></p>
+                <SocialLogin />
             </div>
         </div>
     );

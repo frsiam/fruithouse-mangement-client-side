@@ -33,13 +33,13 @@ const SocialLogin = () => {
                 <div style={{ height: '1px' }} className='bg-primary w-50 mt-1'></div>
             </div>
             <h1 className='my-2'>{errorElement}</h1>
-            <div className='d-flex justify-around'>
+            <div className='d-flex justify-around w-100'>
                 <div className='my-2'>
-                    <button onClick={() => signInWithGoogle()} className="btn bg-slate-200 btn-outline-dark rounded-0 font-semibold w-full">Google
+                    <button onClick={() => signInWithGoogle()} className="btn bg-slate-200 btn-outline-dark rounded-0 font-semibold px-4">Google
                     </button>
                 </div>
-                <div className='my-2'>
-                    <button onClick={() => signInWithGithub()} className="btn btn-dark rounded-0">Github
+                <div className='my-2 ms-1'>
+                    <button onClick={() => signInWithGithub()} className="btn btn-dark rounded-0 px-4">Github
                     </button>
                 </div>
             </div>

@@ -14,6 +14,7 @@ const Login = () => {
     const location = useLocation();
 
     const from = location.state?.from?.pathname || "/";
+    let errorElement;
 
     const [
         signInWithEmailAndPassword,
@@ -21,6 +22,10 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>;
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -30,7 +35,7 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     }
     if (loading) {
-        <Loading />
+        return <Loading />
     }
     if (user) {
         navigate(from, { replace: true });
@@ -56,6 +61,7 @@ const Login = () => {
                     <button className="btn bg-rose-600 font-semibold text-xl text-white rounded-0 w-full">Login</button>
                 </form>
                 <p>Not a Member ? <span onClick={() => navigate('/register')} className='text-primary cursor-pointer font-semibold'>Register</span></p>
+                {errorElement}
                 <SocialLogin />
             </div>
         </div>
