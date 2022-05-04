@@ -1,6 +1,7 @@
-import { EyeIcon } from '@heroicons/react/solid';
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import login from '../../images/login.png';
+import loginbg from '../../images/loginbg.png';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -15,25 +16,26 @@ const Login = () => {
         console.log(password);
     }
     return (
-        <div className=' bg-black min-h-screen'>
-            <div className='container  mx-auto w-3/4 md:w-1/2 lg:w-2/6 p-5 bg-emerald-200'>
-                <h1 className='text-2xl text-center mt-5 mb-3 font-semibold'>Login form</h1>
-                <form className='my-5' onSubmit={handleSubmit}>
+        <div className='min-h-screen' style={{ backgroundImage: `url(${loginbg})` }}>
+            <div className='container  mx-auto w-3/4 md:w-1/2 lg:w-2/6 py-5 px-4 md:p-5 bg-emerald-200'>
+                <div className='text-center mx-auto'>
+                    <img className='img-fluid rounded-circle mx-auto w-3/5 md:w-2/6' src={login} alt="" />
+                    <h1 className='text-2xl font-semibold'>Login form</h1>
+                </div>
+                <form className='mt-5 mb-3' onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label htmfor="exampleInputEmail1" className="form-label">Email address</label>
-                        <input ref={emailRef} type="email" className="form-control text-xl" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                        <input ref={emailRef} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email' />
                     </div>
                     <div className="mb-3">
-                        <label htmfor="exampleInputPassword1" className="form-label">Password</label>
-                        <input ref={passwordRef} type="password" className="form-control position-relative" id="exampleInputPassword1" />
+                        <input ref={passwordRef} type="password" className="form-control" id="exampleInputPassword1" placeholder='Password' />
                     </div>
                     <div className="mb-3 form-check">
                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                        <label className="form-check-label" htmfor="exampleCheck1">Check me out</label>
+                        <label className="form-check-label" htmfor="exampleCheck1">Remember me</label>
                     </div>
-                    <button className="btn btn-primary rounded-0 w-full">Submit</button>
+                    <button className="btn bg-rose-600 font-semibold text-xl text-white rounded-0 w-full">Login</button>
                 </form>
-                <p>Not a Member ? <span onClick={() => navigate('/register')} className='text-primary cursor-pointer'>Register</span></p>
+                <p>Not a Member ? <span onClick={() => navigate('/register')} className='text-primary cursor-pointer font-semibold'>Register</span></p>
             </div>
         </div>
     );

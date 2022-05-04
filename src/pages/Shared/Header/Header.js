@@ -28,6 +28,9 @@ const Header = () => {
                                 <Link to='login' onClick={handleSignOut} className="btn btn-link text-decoration-none" type="submit">Sign Out</Link>
                                 : <Link to='login' className='nav-link'>Login</Link>}
                     </div> */}
+                    <div>
+                        <Link to='/login' className="btn btn-link text-decoration-none" type="submit">Login</Link>
+                    </div>
                 </div>
             </div>
         </nav>

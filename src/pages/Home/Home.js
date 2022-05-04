@@ -3,7 +3,6 @@ import Banner from '../Banner/Banner';
 import HeroArea from '../HeroArea/HeroArea';
 import HomeInventories from '../HomeInventories/HomeInventories';
 import Information from '../Information/Information';
-import Footer from '../Shared/Footer/Footer';
 import Team from '../Team/Team';
 
 const Home = () => {
@@ -14,7 +13,6 @@ const Home = () => {
             <HomeInventories />
             <Information />
             <Team />
-            <Footer />
         </div>
     );
 };

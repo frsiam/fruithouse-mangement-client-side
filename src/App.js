@@ -6,6 +6,7 @@ import Login from './pages/Login/Login';
 import Register from './pages/Login/Register';
 import ManageInventory from './pages/ManageInventory/ManageInventory';
 import NotFound from './pages/NotFound/NotFound';
+import Footer from './pages/Shared/Footer/Footer';
 import Header from './pages/Shared/Header/Header';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/blogs' element={<Blogs />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
