@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import bgImage from '../../images/wickedbackground.png';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import SocialLogin from './SocialLogin';
+import Loading from '../Loading/Loading';
+import { toast } from 'react-toastify';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -14,20 +16,26 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    const handleRegister = e => {
+    if (loading || updating) {
+        return <Loading />
+    }
+
+    const handleRegister = async e => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         const confirmpassword = e.target.confirmpassword.value;
         if (password !== confirmpassword) {
-            alert('Password can not matched !');
+            toast('Password can not matched !');
             // toast('Password can not matched !');
             return;
         }
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name })
     }
 
     if (user) {
@@ -55,7 +63,7 @@ const Register = () => {
                         <input onClick={() => setTerms(!terms)} type="checkbox" className="form-check-input" id="exampleCheck1" />
                         <label className="form-check-label" htmfor="exampleCheck1">Accepts the all terms and conditions.</label>
                     </div>
-                    <button disabled={!terms} className="btn bg-pink-600 font-semibold text-xl text-stone-50 rounded-0 w-full">Register</button>
+                    <button disabled={!terms} className="btn bg-purple-800 font-semibold text-xl text-white rounded-0 w-full">Register</button>
                 </form>
                 <p>Already Member ? <span onClick={() => navigate('/login')} className='text-primary cursor-pointer font-semibold'>Please Login</span></p>
                 <SocialLogin />

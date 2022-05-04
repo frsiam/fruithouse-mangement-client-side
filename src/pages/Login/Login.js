@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import login from '../../images/login.png';
 import loginbg from '../../images/loginbg.png';
@@ -23,8 +24,14 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
     if (error) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>;
+    }
+
+    if (loading || sending) {
+        return <Loading />
     }
 
     const handleSubmit = e => {
@@ -34,11 +41,17 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password);
     }
-    if (loading) {
-        return <Loading />
-    }
     if (user) {
         navigate(from, { replace: true });
+    }
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (!email) {
+            return alert('Please give a valid email.');
+        }
+        await sendPasswordResetEmail(email);
+        toast('Email sent !! Check Your email')
     }
     return (
         <div className='min-h-screen' style={{ backgroundImage: `url(${loginbg})` }}>
@@ -54,14 +67,13 @@ const Login = () => {
                     <div className="mb-3">
                         <input ref={passwordRef} type="password" className="form-control" id="exampleInputPassword1" placeholder='Password' />
                     </div>
-                    <div className="mb-3 form-check">
-                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                        <label className="form-check-label" htmfor="exampleCheck1">Remember me</label>
-                    </div>
+                    <h1 className='my-3'>{errorElement}</h1>
                     <button className="btn bg-rose-600 font-semibold text-xl text-white rounded-0 w-full">Login</button>
                 </form>
-                <p>Not a Member ? <span onClick={() => navigate('/register')} className='text-primary cursor-pointer font-semibold'>Register</span></p>
-                {errorElement}
+                <div className='d-flex justify-between'>
+                    <p className='me-2'>Not a Member ? <span onClick={() => navigate('/register')} className='text-primary cursor-pointer font-semibold'>Register</span></p>
+                    <p className='ms-2'>Forget Password ? <span onClick={() => resetPassword()} className='text-primary cursor-pointer font-semibold'>Reset</span></p>
+                </div>
                 <SocialLogin />
             </div>
         </div>
