@@ -1,14 +1,19 @@
 import React, { useRef } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import login from '../../images/login.png';
 import loginbg from '../../images/loginbg.png';
+import Loading from '../Loading/Loading';
+import SocialLogin from './SocialLogin';
 
 const Login = () => {
     const navigate = useNavigate();
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const [
         signInWithEmailAndPassword,
@@ -24,8 +29,11 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password);
     }
+    if (loading) {
+        <Loading />
+    }
     if (user) {
-        navigate('/blogs')
+        navigate(from, { replace: true });
     }
     return (
         <div className='min-h-screen' style={{ backgroundImage: `url(${loginbg})` }}>
@@ -48,6 +56,7 @@ const Login = () => {
                     <button className="btn bg-rose-600 font-semibold text-xl text-white rounded-0 w-full">Login</button>
                 </form>
                 <p>Not a Member ? <span onClick={() => navigate('/register')} className='text-primary cursor-pointer font-semibold'>Register</span></p>
+                <SocialLogin />
             </div>
         </div>
     );
