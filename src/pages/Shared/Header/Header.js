@@ -28,6 +28,9 @@ const Header = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="blogs">Blogs</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="additem">Add Item</Link>
+                        </li>
                     </ul>
                     <div className="d-flex align-items-center">
                         {user && <p className='text-xl fw-bold text-white'>{user.displayName}</p>}

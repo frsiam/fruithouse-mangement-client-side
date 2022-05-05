@@ -11,6 +11,7 @@ import Footer from './pages/Shared/Footer/Footer';
 import Header from './pages/Shared/Header/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AddItem from './pages/AddItem/AddItem';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Inventory />
           </RequireAuth>
         } />
+        <Route path='/additem' element={<AddItem />} />
         <Route path='/manageinventory' element={<ManageInventory />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
