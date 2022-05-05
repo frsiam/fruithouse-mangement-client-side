@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import Additem from '../../images/additem.png';
 
 const AddItem = () => {
@@ -15,7 +16,18 @@ const AddItem = () => {
 
         const fruit = { name, img, price, quantity, email, supplierName, description };
 
-
+        fetch('http://localhost:4000/fruit', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(fruit),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                toast('Item added succesffully !!')
+            })
 
         e.target.reset()
     }
