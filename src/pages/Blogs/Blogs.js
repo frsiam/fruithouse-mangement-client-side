@@ -5,7 +5,7 @@ const Blogs = () => {
         <div className='container px-4'>
             <div className='my-4'>
                 <h2 className='text-3xl text-center my-3'>Difference between javascript and nodejs</h2>
-                <table class="table table-bordered">
+                <table className="table table-bordered">
                     <thead className='table-info'>
                         <tr className='row'>
                             <th className='col-2'>S.No</th>

@@ -26,7 +26,7 @@ const Inventory = () => {
                 </div>
             </div>
             <div className="my-3 d-flex justify-evenly">
-                <UpdateModal />
+                <UpdateModal id={id}></UpdateModal>
                 <div className='text-center'>
                     <button onClick={() => navigate('/manageinventory')} className="btn bg-fuchsia-600 text-white font-semibold rounded-0">Manage Inventories</button>
                 </div>

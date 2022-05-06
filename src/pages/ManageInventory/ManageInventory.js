@@ -26,9 +26,6 @@ const ManageInventory = () => {
                     }
                 })
         }
-        else {
-            console.log('user change the decision')
-        }
     }
     return (
         <div>
