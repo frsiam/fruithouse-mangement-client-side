@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Singleinventory = ({ inventory, desc }) => {
-    const { name, img, quantity, price, description, supplierName, _id } = inventory;
+    const { name, img, quantity, price, supplierName, _id } = inventory;
     return (
         <div className='shadow-md p-2'>
             <div className="grid grid-cols-1 md:grid-cols-10 gap-2">
