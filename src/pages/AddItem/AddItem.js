@@ -14,8 +14,11 @@ const AddItem = () => {
         const description = e.target.desc.value;
         const img = e.target.imgageUrl.value;
 
+        console.log(typeof quantity)
+
         const fruit = { name, img, price, quantity, email, supplierName, description };
 
+        // Data add to database 
         fetch('http://localhost:4000/fruit', {
             method: 'post',
             headers: {
