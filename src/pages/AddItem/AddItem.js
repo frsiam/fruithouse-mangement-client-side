@@ -32,6 +32,7 @@ const AddItem = () => {
             .then(data => {
                 console.log('Success:', data);
                 toast('Item added succesffully !!')
+                setConfirm(!confirm)
             })
 
         e.target.reset()

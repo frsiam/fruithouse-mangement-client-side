@@ -1,8 +1,9 @@
-import { TrashIcon } from '@heroicons/react/solid';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import ManageInventoryItem from '../ManageInventoryItem/ManageInventoryItem';
+import { PlusCircleIcon } from '@heroicons/react/solid';
 
 const ManageInventory = () => {
     const [items, setItems] = useState([]);
@@ -14,7 +15,6 @@ const ManageInventory = () => {
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you sure to delete?');
         if (proceed) {
-            console.log(id);
             const url = `http://localhost:4000/fruit/${id}`
             axios({
                 method: 'delete',
@@ -30,14 +30,16 @@ const ManageInventory = () => {
         }
     }
     return (
-        <div className='container'>
-            <h1>Manage All Inventory fruits: {items.length}</h1>
-            {
-                items.map(i => <li key={i._id}>
-                    {i.name}-----{i.supplierName}-----{i.quantity}---<TrashIcon className='w-8 d-inline text-danger' onClick={() => handleDeleteItem(i._id)}></TrashIcon>
-                </li>)
-            }
-            <button onClick={() => navigate('/additem')} className="btn btn-dark rounded-0">Add New Item</button>
+        <div className="container my-3 min-h-screen">
+            <h1 className='text-2xl text-center font-semibold'>Manage All Inventory Items</h1>
+            <div className='container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 my-4'>
+                {
+                    items.map(item => <ManageInventoryItem key={item._id} item={item} handleDeleteItem={handleDeleteItem} />)
+                }
+            </div>
+            <div className='text-center'>
+                <button onClick={() => navigate('/additem')} className="btn btn-dark rounded-0">Add New Item <PlusCircleIcon className='text-white w-5 d-inline'></PlusCircleIcon></button>
+            </div>
         </div>
     );
 };
