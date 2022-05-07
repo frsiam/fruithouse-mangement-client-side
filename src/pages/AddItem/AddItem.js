@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 import Additem from '../../images/additem.png';
 
 const AddItem = () => {
+    const [user] = useAuthState(auth);
+    const [confirm, setConfirm] = useState(false);
 
     const handleAddItem = e => {
         e.preventDefault();
@@ -10,11 +14,9 @@ const AddItem = () => {
         const supplierName = e.target.supplierName.value;
         const price = e.target.price.value;
         const quantity = e.target.quantity.value;
-        const email = e.target.email.value;
+        const email = user?.email;
         const description = e.target.desc.value;
         const img = e.target.imgageUrl.value;
-
-        console.log(typeof quantity)
 
         const fruit = { name, img, price, quantity, email, supplierName, description };
 
@@ -46,12 +48,13 @@ const AddItem = () => {
                     <div className="row mb-4">
                         <div className="col">
                             <div className="form-outline">
-                                <input name='name' type="text" id="form6Example1" className="form-control" placeholder='Item Name' />
+                                <input name='name' type="text" id="form6Example1" className="form-control" placeholder='Item Name' required />
                             </div>
                         </div>
+
                         <div className="col">
                             <div className="form-outline">
-                                <input name='supplierName' type="text" id="form6Example2" className="form-control" placeholder='Supplier Name' />
+                                <input name='supplierName' type="text" id="form6Example2" className="form-control" placeholder='Supplier Name' required />
                             </div>
                         </div>
                     </div>
@@ -59,40 +62,40 @@ const AddItem = () => {
                     <div className="row mb-4">
                         <div className="col">
                             <div className="form-outline">
-                                <input name='price' type="text" id="form6Example3" className="form-control" placeholder='Item Price' />
+                                <input name='price' type="text" id="form6Example3" className="form-control" placeholder='Item Price' required />
                             </div>
                         </div>
                         <div className="col">
                             <div className="form-outline">
-                                <input name='quantity' type="text" id="form6Example4" className="form-control" placeholder='Quantity' />
+                                <input name='quantity' type="text" id="form6Example4" className="form-control" placeholder='Quantity' required />
                             </div>
                         </div>
                     </div>
 
                     {/* <!-- Email input --> */}
                     <div className="form-outline mb-4">
-                        <input name='email' type="email" id="form6Example5" className="form-control" placeholder='Email' />
+                        <input name='email' type="email" value={user?.email} id="form6Example5" className="form-control" placeholder='Email' readOnly disabled />
                     </div>
 
-                    {/* <!-- Number input --> */}
+                    {/* <!-- img url input --> */}
                     <div className="form-outline mb-4">
-                        <input name='imgageUrl' type="text" id="form6Example6" className="form-control" placeholder='Image URL' />
+                        <input name='imgageUrl' type="text" id="form6Example6" className="form-control" placeholder='Image URL' required />
                     </div>
 
-                    {/* <!-- Message input --> */}
+                    {/* <!-- description input --> */}
                     <div className="form-outline mb-4">
-                        <textarea name='desc' className="form-control" id="form6Example7" rows="2" placeholder='Short Description'></textarea>
+                        <textarea name='desc' className="form-control" id="form6Example7" rows="2" placeholder='Short Description' required></textarea>
                     </div>
 
                     {/* <!-- Checkbox --> */}
-                    {/* <div className="form-check d-flex justify-content-center mb-4">
-                        <label className="form-check-label" for="form6Example8"> Create an account? </label>
-                        <input className="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-                    </div> */}
+                    <div className="form-check mb-4">
+                        <label className="form-check-label text-white" htmlFor="form6Example8"> Are you confirm that filling all input field ? </label>
+                        <input onClick={() => setConfirm(!confirm)} className="form-check-input me-2" type="checkbox" value="" id="form6Example8" />
+                    </div>
 
                     {/* <!-- Submit button --> */}
                     <div className="text-center">
-                        <button className="btn btn-primary btn-block mb-4 rounded-0 w-50">Add Item</button>
+                        <button disabled={!confirm} className="btn btn-primary btn-block mb-4 rounded-0 w-50">Add Item</button>
                     </div>
                 </form>
             </div>

@@ -52,8 +52,7 @@ const Footer = () => {
                                 About Developer
                             </h6>
                             <p>
-                                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                dolor sit amet, consectetur adipisicing elit.
+                                Hey ! It's Md Foyzur Rahman Siam, I want to demonstrate and build my expertise as programmer by seeking the knowledge and skill sets in the areas of new technology, effective and efficient communication and best practice processes.
                             </p>
                         </div>
                         {/* <!-- Grid column --> */}
@@ -65,16 +64,16 @@ const Footer = () => {
                                 Products
                             </h6>
                             <p>
-                                <a href="#!" className="text-reset">Angular</a>
+                                <a href="#!" className="text-reset">BootStrap</a>
                             </p>
                             <p>
                                 <a href="#!" className="text-reset">React</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Vue</a>
+                                <a href="#!" className="text-reset">Node.js</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Laravel</a>
+                                <a href="#!" className="text-reset">Express.js</a>
                             </p>
                         </div>
                         {/* <!-- Grid column --> */}
@@ -86,16 +85,16 @@ const Footer = () => {
                                 Useful links
                             </h6>
                             <p>
-                                <a href="#!" className="text-reset">Pricing</a>
+                                <a href="#!" className="text-reset">Manage Items</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Settings</a>
+                                <a href="#!" className="text-reset">Add Items</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Orders</a>
+                                <a href="#!" className="text-reset">My Items</a>
                             </p>
                             <p>
-                                <a href="#!" className="text-reset">Help</a>
+                                <a href="#!" className="text-reset">Home</a>
                             </p>
                         </div>
                         {/* <!-- Grid column --> */}
@@ -106,10 +105,10 @@ const Footer = () => {
                             <h6 className="text-uppercase fw-bold mb-4">
                                 Contact
                             </h6>
-                            <p><HomeIcon className="h-5 w-5 text-blue-500 d-inline" /> New York, NY 10012, US</p>
+                            <p><HomeIcon className="h-5 w-5 text-blue-500 d-inline" /> 194/D, Tejkunipara, Dhaka-1215</p>
                             <p>
                                 <MailIcon className="h-5 w-5 text-blue-500 d-inline" />
-                                info@example.com
+                                <span className='ms-2'>siam.frs@gmail.com</span>
                             </p>
                             <p><PhoneIcon className="h-5 w-5 text-blue-500 d-inline" /> + 88 019 30 820 152</p>
                             <p><i className="fas fa-print me-3"></i> + 015 80 878 858</p>
@@ -124,7 +123,7 @@ const Footer = () => {
             {/* <!-- Copyright --> */}
             <div className="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
                 © {year} Copyright:
-                <a className="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                <a className="text-reset fw-bold ms-1" href="https://mdbootstrap.com/">Fr Siam</a>
             </div>
             {/* <!-- Copyright --> */}
         </footer>

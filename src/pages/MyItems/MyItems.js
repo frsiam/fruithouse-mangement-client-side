@@ -1,20 +1,34 @@
 import { TrashIcon } from '@heroicons/react/solid';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
-const ManageInventory = () => {
-    const [items, setItems] = useState([]);
+const MyItems = () => {
+    const [myItems, setMyItems] = useState([]);
+    const [user] = useAuthState(auth);
     const navigate = useNavigate()
 
-    axios.get('http://localhost:4000/fruits')
-        .then((response) => setItems(response.data))
-
+    useEffect(() => {
+        const getMyItems = async () => {
+            const email = user?.email;
+            const url = `http://localhost:4000/myitems?email=${email}`;
+            try {
+                const { data } = await axios.get(url);
+                setMyItems(data);
+            }
+            catch (error) {
+                console.log(error.message);
+            }
+        }
+        getMyItems();
+    }, [user])
+    // For delete my item
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you sure to delete?');
         if (proceed) {
-            console.log(id);
             const url = `http://localhost:4000/fruit/${id}`
             axios({
                 method: 'delete',
@@ -22,8 +36,8 @@ const ManageInventory = () => {
             })
                 .then(res => {
                     if (res.data.deletedCount > 0) {
-                        const remaining = items.filter(item => item._id !== id);
-                        setItems(remaining);
+                        const remaining = myItems.filter(item => item._id !== id);
+                        setMyItems(remaining);
                         toast('Deleted Successfully !!!')
                     }
                 })
@@ -31,9 +45,9 @@ const ManageInventory = () => {
     }
     return (
         <div className='container'>
-            <h1>Manage All Inventory fruits: {items.length}</h1>
+            <h1>Manage My items: {myItems.length}</h1>
             {
-                items.map(i => <li key={i._id}>
+                myItems.map(i => <li key={i._id}>
                     {i.name}-----{i.supplierName}-----{i.quantity}---<TrashIcon className='w-8 d-inline text-danger' onClick={() => handleDeleteItem(i._id)}></TrashIcon>
                 </li>)
             }
@@ -42,4 +56,4 @@ const ManageInventory = () => {
     );
 };
 
-export default ManageInventory;
+export default MyItems;

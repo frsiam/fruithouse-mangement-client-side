@@ -4,14 +4,13 @@ import Singleinventory from '../Singleinventory/Singleinventory';
 
 const HomeInventories = () => {
     const [inventories, setInventories] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:4000/fruits')
             .then(res => res.json())
             .then(data => setInventories(data))
     }, [])
-    console.log(inventories.length)
-    const navigate = useNavigate();
     return (
         <>
             <div className='container grid grid-cols-1 lg:grid-cols-2 gap-4 mx-auto text-center  py-5'>
