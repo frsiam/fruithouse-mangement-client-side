@@ -17,7 +17,7 @@ const ManageInventoryItem = ({ item, handleDeleteItem }) => {
             </div>
 
             <div className="my-3">
-                <h1> <span className='border-b-2 text-slate-300 border-gray-300'>Added by</span> : <span className='text-secondary font-semibold'>{email}</span></h1>
+                <h1> <span className='text-slate-300'>Added by</span> : <span className='text-secondary font-semibold'>{email}</span></h1>
             </div>
 
             <div className='d-flex my-3 justify-between'>

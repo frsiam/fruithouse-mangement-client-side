@@ -1,4 +1,4 @@
-import { PlusCircleIcon, TrashIcon } from '@heroicons/react/solid';
+import { PlusCircleIcon } from '@heroicons/react/solid';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -47,12 +47,6 @@ const MyItems = () => {
     return (
         <div className='container my-3 min-h-screen'>
             <h1 className='text-2xl text-center font-semibold'>Manage My items: {myItems.length}</h1>
-            {/* <h1>Manage My items: {myItems.length}</h1>
-            {
-                myItems.map(i => <li key={i._id}>
-                    {i.name}-----{i.supplierName}-----{i.quantity}---<TrashIcon className='w-8 d-inline text-danger' onClick={() => handleDeleteItem(i._id)}></TrashIcon>
-                </li>)
-            } */}
             <div className='container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 my-4'>
                 {
                     myItems.map(myItem => <ManageInventoryItem key={myItem._id} item={myItem} handleDeleteItem={handleDeleteItem} />)
