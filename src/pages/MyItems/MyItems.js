@@ -60,7 +60,7 @@ const MyItems = () => {
     }
     return (
         <div className='container my-3 min-h-screen'>
-            <h1 className='text-2xl text-center font-semibold'>Manage My items: {myItems.length}</h1>
+            <h1 className='text-2xl text-center font-semibold'>Manage My items</h1>
             <div className='container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 my-4'>
                 {
                     myItems.map(myItem => <ManageInventoryItem key={myItem._id} item={myItem} handleDeleteItem={handleDeleteItem} />)

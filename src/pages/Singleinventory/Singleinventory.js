@@ -7,7 +7,7 @@ const Singleinventory = ({ inventory, desc }) => {
         <div className='shadow-md p-2'>
             <div className="grid grid-cols-1 md:grid-cols-10 gap-2">
                 <div className='md:col-span-4'>
-                    <img className='img-fluid h-100' src={img} alt="" />
+                    <img className='img-fluid h-100 rounded-full' src={img} alt="" />
                 </div>
                 <div className='text-justify md:col-span-6'>
                     <h1 className='text-xl font-bold mb-2'>{name}</h1>
