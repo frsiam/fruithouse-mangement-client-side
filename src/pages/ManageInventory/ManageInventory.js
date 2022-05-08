@@ -9,9 +9,6 @@ const ManageInventory = () => {
     const [items, setItems] = useState([]);
     const navigate = useNavigate()
 
-    // axios.get('https://infinite-brook-76806.herokuapp.com/fruits')
-    //     .then((response) => setItems(response.data))
-
     useEffect(() => {
         fetch('https://infinite-brook-76806.herokuapp.com/fruits')
             .then(res => res.json())
