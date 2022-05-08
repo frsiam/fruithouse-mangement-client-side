@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Blogs from './pages/Blogs/Blogs';
 import Home from './pages/Home/Home';
 import Inventory from './pages/Inventory/Inventory';
@@ -15,6 +15,7 @@ import AddItem from './pages/AddItem/AddItem';
 import MyItems from './pages/MyItems/MyItems';
 
 function App() {
+  const navigate = useNavigate()
   return (
     <div>
       <Header />
@@ -44,6 +45,12 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/blogs' element={<Blogs />} />
+        <Route path='/un$a8T9@h0rIz2EdAcCe5sS' element={<>
+          <div className='container text-center min-h-screen mt-40'>
+            <h1 className='text-xl'><span className='text-danger'>Error :</span> Unathorized Access or Forbidden Access</h1>
+            <h1 className='font-semibold'>Please <button className='btn btn-link text-xl text-decoration-none' onClick={() => navigate('/login')}>Login</button> if you are valid user</h1>
+          </div>
+        </>} />
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />

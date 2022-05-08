@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import ManageInventoryItem from '../ManageInventoryItem/ManageInventoryItem';
+import { signOut } from 'firebase/auth';
 
 const MyItems = () => {
     const [myItems, setMyItems] = useState([]);
@@ -17,15 +18,28 @@ const MyItems = () => {
             const email = user?.email;
             const url = `http://localhost:4000/myitems?email=${email}`;
             try {
-                const { data } = await axios.get(url);
+                const { data } = await axios.get(url, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                });
                 setMyItems(data);
             }
             catch (error) {
-                console.log(error.message);
+                if (error.response.status === 401) {
+                    toast('Unauthorized Access');
+                }
+                else if (error.response.status === 403) {
+                    toast('Forbidden Access');
+                }
+                if (error.response.status === 401 || error.response.status === 403) {
+                    signOut(auth)
+                    navigate('/un$a8T9@h0rIz2EdAcCe5sS')
+                }
             }
         }
         getMyItems();
-    }, [user])
+    }, [user, navigate])
     // For delete my item
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you sure to delete?');
