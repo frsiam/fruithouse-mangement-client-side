@@ -19,8 +19,8 @@ const Banner = () => {
                 <div className="carousel-item" data-bs-interval="2000">
                     <img src="https://i.ibb.co/HtkNJpX/banner-two.jpg" className="d-block w-100 banner-img" alt="..." />
                     <div className="carousel-caption d-none d-md-block text-white">
-                        <h5>Automated warehouse</h5>
-                        <p>Quran tutor offers an online Quran Tajweed course for both men and women.</p>
+                        <h5 className='text-3xl'>Automated warehouse</h5>
+                        <p>We have automated machine for load and unload product</p>
                     </div>
                 </div>
             </div>

@@ -81,7 +81,7 @@ const Inventory = () => {
                             <span className='text-slate-500 font-semibold'>Available stock :
                             </span>
                             {
-                                item?.quantity > 0 ? <span className='ml-3 text-xl text-teal-800'>{item?.quantity}</span> : <span className='ml-3 text-danger text-3xl'>{'Out of stock'}</span>
+                                item?.quantity > 0 ? <span className='ml-3 text-xl text-teal-800'>{item?.quantity}</span> : <span className='ml-3 text-danger text-2xl'>{'Out of stock'}</span>
                             }
                         </p>
                         <h1 className='font-semibold my-1'>
