@@ -11,7 +11,7 @@ const Inventory = () => {
     const [item, setItem] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:4000/fruit/${id}`;
+        const url = `https://infinite-brook-76806.herokuapp.com/fruit/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))
@@ -25,7 +25,7 @@ const Inventory = () => {
 
         const updatedQuantity = { quantity: (parseFloat(quantity) + parseFloat(newQuantity)).toString() };
 
-        fetch(`http://localhost:4000/fruit/${id}`, {
+        fetch(`https://infinite-brook-76806.herokuapp.com/fruit/${id}`, {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const Inventory = () => {
         const { quantity } = item;
         const updatedQuantity = { quantity: (parseFloat(quantity) - 1).toString() };
 
-        fetch(`http://localhost:4000/fruit/${id}`, {
+        fetch(`https://infinite-brook-76806.herokuapp.com/fruit/${id}`, {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json',

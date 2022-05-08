@@ -21,7 +21,7 @@ const AddItem = () => {
         const fruit = { name, img, price, quantity, email, supplierName, description };
 
         // Data add to database 
-        fetch('http://localhost:4000/fruit', {
+        fetch('https://infinite-brook-76806.herokuapp.com/fruit', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',

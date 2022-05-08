@@ -7,7 +7,7 @@ const HomeInventories = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:4000/fruits')
+        fetch('https://infinite-brook-76806.herokuapp.com/fruits')
             .then(res => res.json())
             .then(data => setInventories(data))
     }, [])

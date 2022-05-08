@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import ManageInventoryItem from '../ManageInventoryItem/ManageInventoryItem';
 import { PlusCircleIcon } from '@heroicons/react/solid';
@@ -9,13 +9,19 @@ const ManageInventory = () => {
     const [items, setItems] = useState([]);
     const navigate = useNavigate()
 
-    axios.get('http://localhost:4000/fruits')
-        .then((response) => setItems(response.data))
+    // axios.get('https://infinite-brook-76806.herokuapp.com/fruits')
+    //     .then((response) => setItems(response.data))
+
+    useEffect(() => {
+        fetch('https://infinite-brook-76806.herokuapp.com/fruits')
+            .then(res => res.json())
+            .then(data => setItems(data));
+    }, [])
 
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you sure to delete?');
         if (proceed) {
-            const url = `http://localhost:4000/fruit/${id}`
+            const url = `https://infinite-brook-76806.herokuapp.com/fruit/${id}`
             axios({
                 method: 'delete',
                 url: url
