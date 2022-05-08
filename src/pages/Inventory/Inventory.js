@@ -92,7 +92,7 @@ const Inventory = () => {
                                 {item?.supplierName}
                             </span>
                         </h1>
-                        <p className='text-justify mt-4 leading-loose'>
+                        <p className='text-justify mt-4 leading-loose indent-8'>
                             {item?.description}
                         </p>
                     </div>
