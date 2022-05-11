@@ -108,7 +108,7 @@ const Inventory = () => {
                 <div className="my-3 row w-100">
                     <div className='col-12 col-md-6 text-center'>
                         <form onSubmit={handleUpdateItem} className="d-flex my-3 md:w-3/4 lg:w-1/2 mx-auto">
-                            <input name='quantity' className="form-control me-2" type="text" placeholder="Quntity" aria-label="Search" />
+                            <input name='quantity' className="form-control me-2" type="number" placeholder="Quntity" aria-label="Search" required />
                             <button className="btn btn-outline-dark rounded-0">Restock</button>
                         </form>
                     </div>

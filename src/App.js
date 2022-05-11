@@ -13,6 +13,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddItem from './pages/AddItem/AddItem';
 import MyItems from './pages/MyItems/MyItems';
+import About from './pages/About/About';
 
 function App() {
   const navigate = useNavigate()
@@ -42,6 +43,7 @@ function App() {
             <ManageInventory />
           </RequireAuth>
         } />
+        <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/blogs' element={<Blogs />} />

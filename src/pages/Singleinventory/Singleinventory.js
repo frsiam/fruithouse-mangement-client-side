@@ -16,7 +16,7 @@ const Singleinventory = ({ inventory, desc }) => {
                     <h1 className='font-bold mt-2'>Supplier Name: <span className='text-blue-600'>{supplierName}</span></h1>
                     <p className='mb-2'>{desc}...</p>
                     <Link to={`inventory/${_id}`}>
-                        <button className="btn btn-info rounded-0 w-100">Manage</button>
+                        <button className="btn btn-info rounded-0 w-100">Stock Update</button>
                     </Link>
                 </div>
             </div>

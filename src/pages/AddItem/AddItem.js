@@ -63,12 +63,12 @@ const AddItem = () => {
                     <div className="row mb-4">
                         <div className="col">
                             <div className="form-outline">
-                                <input name='price' type="text" id="form6Example3" className="form-control" placeholder='Item Price' required />
+                                <input name='price' type="number" id="form6Example3" className="form-control" placeholder='Item Price' required />
                             </div>
                         </div>
                         <div className="col">
                             <div className="form-outline">
-                                <input name='quantity' type="text" id="form6Example4" className="form-control" placeholder='Quantity' required />
+                                <input name='quantity' type="number" id="form6Example4" className="form-control" placeholder='Quantity' required />
                             </div>
                         </div>
                     </div>

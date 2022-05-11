@@ -31,7 +31,7 @@ const Header = () => {
                             <Link className="nav-link text-info font-semibold" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-info font-semibold" to="about">About</Link>
+                            <Link className="nav-link text-info font-semibold" to="/about">About</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link text-info font-semibold" to="blogs">Blogs</Link>
@@ -39,7 +39,7 @@ const Header = () => {
                     </ul>
                     <div className="d-flex align-items-center">
                         {
-                            user && <Link className="text-teal-300 font-semibold me-2 hover:border-b-2 hover:text-orange-600" to="manageinventory">Manage</Link>
+                            user && <Link className="text-teal-300 font-semibold me-2 hover:border-b-2 hover:text-orange-600" to="manageinventory">Manage Inventories</Link>
                         }
                         {
                             user && <Link className="text-teal-200 font-semibold me-2 hover:border-b-2 hover:text-orange-600" to="additem">Add Item</Link>
